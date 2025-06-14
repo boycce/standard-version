@@ -390,9 +390,9 @@ As of version `7.1.0` you can configure multiple `bumpFiles` and `packageFiles`.
       "type": "json"
     },
     {
-      "filename": "VERSION_TRACKER.json",
-      //  See "Custom `updater`s" for more details.
       "updater": "standard-version-updater.js"
+      "filename": "../*/VERSION_TRACKER.json",
+      //  See "Custom `updater`s" for more details. You can use glob patterns to bump multiple files.
     }
   ]
 }
