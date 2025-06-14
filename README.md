@@ -374,6 +374,7 @@ As of version `7.1.0` you can configure multiple `bumpFiles` and `packageFiles`.
 2. Specify the `bumpFile` "`updater`", this is _how_ the file will be bumped.
     a. If you're using a common type, you can use one of  `standard-version`'s built-in `updaters` by specifying a `type`.
     b. If your using an less-common version file, you can create your own `updater`.
+    c. If you want to skip committing the bumped file, you can use the `skipCommit` option.
 
 ```js
 // .versionrc
@@ -390,9 +391,11 @@ As of version `7.1.0` you can configure multiple `bumpFiles` and `packageFiles`.
       "type": "json"
     },
     {
-      "updater": "standard-version-updater.js"
       "filename": "../*/VERSION_TRACKER.json",
       //  See "Custom `updater`s" for more details. You can use glob patterns to bump multiple files.
+      "updater": "standard-version-updater.js",
+      // Skip committing this bumped file
+      "skipCommit": true
     }
   ]
 }
